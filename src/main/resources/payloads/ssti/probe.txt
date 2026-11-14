@@ -1,0 +1,9 @@
+# SSTI probes — look for math evaluation
+{{7*7}}
+{{7*'7'}}
+${7*7}
+${{7*7}}
+<%= 7*7 %>
+#{7*7}
+*{7*7}
+{@math key=7*7}

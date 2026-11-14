@@ -1,0 +1,5 @@
+%0d%0aInjected-Header: zqxCRLF
+%0aInjected-Header: zqxCRLF
+%0d%0aSet-Cookie: zqx=1
+%0d%0aLocation: https://example.org
+%23%0d%0aInjected-Header: zqxCRLF

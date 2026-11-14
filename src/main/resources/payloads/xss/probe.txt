@@ -1,0 +1,7 @@
+# XSS reflection probes
+zqxINJ1
+"zqxINJ2"
+'zqxINJ3'
+<zqx>INJ4</zqx>
+<svg/onload=1>zqxINJ5
+"><zqxINJ6>

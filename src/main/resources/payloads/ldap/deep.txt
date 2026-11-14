@@ -1,0 +1,8 @@
+*
+*)(&
+*)(|(uid=*))
+*)(|(objectClass=*))
+*))(|(uid=*
+admin*
+admin*)((|userPassword=*)
+*)(cn=*))(|(cn=*
