@@ -24,6 +24,11 @@ data class Signal(
 /** Weighted confidence per payload class. */
 object Scorer {
     fun score(klass: PayloadClass, s: Signal): Double {
+        // Transport failure (no response, connection reset, timeout past the ceiling):
+        // nothing in `s` is a signal of a vuln — it's a signal of a broken request.
+        // Without this guard a status=0 / body="" result trips timingAnomaly,
+        // statusChanged and lengthDelta and scores higher than a real hit.
+        if (s.responseStatus.toInt() == 0) return 0.0
         var score = 0.0
         when (klass) {
             PayloadClass.SQLI -> {
@@ -127,7 +132,12 @@ object Scorer {
             (payload.contains("7*'7'") && responseBody.contains("7777777"))
         )
 
-        val timingAnomaly = responseTimeMs - baselineTimeMs >= 4500
+        // Only treat a slow response as a timing anomaly when we actually got a
+        // real response. A connect timeout or dropped socket also spikes the
+        // duration, but it isn't a blind-injection signal.
+        val timingAnomaly = responseStatus.toInt() != 0 &&
+            responseBody.isNotEmpty() &&
+            responseTimeMs - baselineTimeMs >= 4500
 
         return Signal(
             statusChanged = baselineStatus != responseStatus,
